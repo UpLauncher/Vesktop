@@ -34,7 +34,7 @@ function loadSettings<T extends object = any>(file: string, name: string) {
     return store;
 }
 
-export const Settings = loadSettings<TSettings>(SETTINGS_FILE, "Vesktop settings");
+export const Settings = loadSettings<TSettings>(SETTINGS_FILE, "VesktopJP settings");
 if (Object.hasOwn(Settings.plain, "discordWindowsTitleBar")) {
     Settings.plain.customTitleBar = Settings.plain.discordWindowsTitleBar;
     delete Settings.plain.discordWindowsTitleBar;

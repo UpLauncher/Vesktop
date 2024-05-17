@@ -14,9 +14,11 @@ export const WindowsTransparencyControls: SettingsComponent = ({ settings }) => 
 
     return (
         <>
-            <Forms.FormTitle className={Margins.top16 + " " + Margins.bottom8}>Transparency Options</Forms.FormTitle>
+            <Forms.FormTitle className={Margins.top16 + " " + Margins.bottom8}>
+                ウインドウの透かしの設定
+            </Forms.FormTitle>
             <Forms.FormText className={Margins.bottom8}>
-                Requires a full restart. You will need a theme that supports transparency for this to work.
+                完全な再起動が必要です。これを使用するには、対応したテーマを使用する必要があります。
             </Forms.FormText>
 
             <Select
@@ -28,12 +30,12 @@ export const WindowsTransparencyControls: SettingsComponent = ({ settings }) => 
                         default: true
                     },
                     {
-                        label: "Mica (incorporates system theme + desktop wallpaper to paint the background)",
+                        label: "Mica (システムテーマ＋デスクトップ壁紙を組み込み、背景を彩る",
                         value: "mica"
                     },
-                    { label: "Tabbed (variant of Mica with stronger background tinting)", value: "tabbed" },
+                    { label: "Tabbed (背景の色合いが強いマイカの変種)", value: "tabbed" },
                     {
-                        label: "Acrylic (blurs the window behind Vesktop for a translucent background)",
+                        label: "Acrylic (Vesktopの背後にあるウィンドウをぼかし、背景を半透明にする。)",
                         value: "acrylic"
                     }
                 ]}

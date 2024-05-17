@@ -84,6 +84,7 @@
         }
 
         button {
+            font-family: "Yu Gothic UI", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif !important;
             padding: 0.6em;
             background: red;
             color: white;
@@ -104,12 +105,12 @@
 </head>
 
 <body>
-    <h1>Welcome to Vesktop</h1>
-    <p>Let's customise your experience!</p>
+    <h1>VesktopJPへようこそ</h1>
+    <p>あなたの体験をカスタマイズしてみましょう！</p>
 
     <form>
         <label>
-            <h2>Discord Branch</h2>
+            <h2>Discordのブランチ</h2>
             <select name="discordBranch">
                 <option value="stable">stable</option>
                 <option value="canary">canary</option>
@@ -119,18 +120,18 @@
 
         <label>
             <div>
-                <h2>Start with System</h2>
-                <span>Automatically open Vesktop when your computer starts</span>
+                <h2>システム起動時に開始</h2>
+                <span>あなたのコンピューターが実行された時にVesktopJPを起動します。</span>
             </div>
             <input type="checkbox" name="autoStart" />
         </label>
 
         <label>
             <div>
-                <h2>Rich Presence</h2>
-                <span
-                    >Enable Rich presence (game activity) via
-                    <a href="https://github.com/OpenAsar/arrpc" target="_blank">arRPC</a></span
+                <h2>アクティビティ</h2>
+                <span>
+                    <a href="https://github.com/OpenAsar/arrpc" target="_blank">arRPC</a
+                    >を使ってアクティビティを有効にしています。</span
                 >
             </div>
             <input type="checkbox" name="richPresence" checked />
@@ -138,23 +139,23 @@
 
         <label>
             <div>
-                <h2>Import Settings</h2>
-                <span>Import Settings from existing Vencord install (if found)</span>
+                <h2>設定をインポート</h2>
+                <span>Vencordのインストールがある場合、それから設定をインポートします。</span>
             </div>
             <input type="checkbox" name="importSettings" checked />
         </label>
 
         <label>
             <div>
-                <h2>Minimise to Tray</h2>
-                <span>Minimise to Tray when closing</span>
+                <h2>トレイへ最小化</h2>
+                <span>閉じた時にトレイへ最小化します。</span>
             </div>
             <input type="checkbox" name="minimizeToTray" checked />
         </label>
     </form>
     <div id="buttons">
-        <button id="cancel">Quit</button>
-        <button id="submit">Submit</button>
+        <button id="cancel">閉じる</button>
+        <button id="submit">さあ、始めよう！</button>
     </div>
 </body>
 

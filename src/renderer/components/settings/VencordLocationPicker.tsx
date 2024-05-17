@@ -12,7 +12,7 @@ export const VencordLocationPicker: SettingsComponent = ({ settings }) => {
     return (
         <>
             <Forms.FormText>
-                Vencord files are loaded from{" "}
+                Vencordファイルは{" "}
                 {settings.vencordDir ? (
                     <a
                         href="about:blank"
@@ -24,8 +24,9 @@ export const VencordLocationPicker: SettingsComponent = ({ settings }) => {
                         {settings.vencordDir}
                     </a>
                 ) : (
-                    "the default location"
+                    "デフォルトの場所"
                 )}
+                からロードされています。
             </Forms.FormText>
             <div className="vcd-location-btns">
                 <Button
@@ -38,7 +39,7 @@ export const VencordLocationPicker: SettingsComponent = ({ settings }) => {
                             case "invalid":
                                 Toasts.show({
                                     message:
-                                        "You did not choose a valid Vencord install. Make sure you're selecting the dist dir!",
+                                        "有効なVencordインストールのディレクトリを選択していません。distフォルダを選択してください。",
                                     id: Toasts.genId(),
                                     type: Toasts.Type.FAILURE
                                 });
@@ -54,7 +55,7 @@ export const VencordLocationPicker: SettingsComponent = ({ settings }) => {
                     color={Button.Colors.RED}
                     onClick={() => (settings.vencordDir = void 0)}
                 >
-                    Reset
+                    リセット
                 </Button>
             </div>
         </>

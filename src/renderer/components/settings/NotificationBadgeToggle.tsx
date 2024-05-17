@@ -18,9 +18,9 @@ export const NotificationBadgeToggle: SettingsComponent = ({ settings }) => {
                 if (v) setBadge();
                 else VesktopNative.app.setBadgeCount(0);
             }}
-            note="Show mention badge on the app icon"
+            note="メンションのバッジをアプリアイコンに追加する"
         >
-            Notification Badge
+            通知バッジ
         </Switch>
     );
 };

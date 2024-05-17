@@ -18,9 +18,9 @@ export const AutoStartToggle: SettingsComponent = () => {
                 await VesktopNative.autostart[v ? "enable" : "disable"]();
                 setAutoStartEnabled(v);
             }}
-            note="Automatically start Vesktop on computer start-up"
+            note="コンピューターが起動したときにVesktopJPを起動する"
         >
-            Start With System
+            システムと開始
         </Switch>
     );
 };

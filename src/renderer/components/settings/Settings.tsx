@@ -29,40 +29,40 @@ interface BooleanSetting {
 export type SettingsComponent = ComponentType<{ settings: typeof Settings.store }>;
 
 const SettingsOptions: Record<string, Array<BooleanSetting | SettingsComponent>> = {
-    "Discord Branch": [DiscordBranchPicker],
-    "System Startup & Performance": [
+    Discordのブランチ: [DiscordBranchPicker],
+    システムの起動とパフォーマンス: [
         AutoStartToggle,
         {
             key: "hardwareAcceleration",
-            title: "Hardware Acceleration",
-            description: "Enable hardware acceleration",
+            title: "ハードウェアアクセラレーション",
+            description: "ハードウェアアクセラレーションを有効にします。",
             defaultValue: true
         }
     ],
-    "User Interface": [
+    ユーザーインターフェース: [
         {
             key: "customTitleBar",
-            title: "Discord Titlebar",
-            description: "Use Discord's custom title bar instead of the native system one. Requires a full restart.",
+            title: "Discordのタイトルバー",
+            description: "Discordのカスタムタイトルバーの代わりに、システムの標準タイトルバーを使用します。",
             defaultValue: isWindows
         },
         {
             key: "staticTitle",
-            title: "Static Title",
-            description: 'Makes the window title "Vesktop" instead of changing to the current page',
+            title: "静的なタイトル",
+            description: 'ウィンドウのタイトルを現在のページに変更するのではなく、"Vesktop"にする。',
             defaultValue: false
         },
         {
             key: "enableMenu",
-            title: "Enable Menu Bar",
-            description: "Enables the application menu bar. Press ALT to toggle visibility.",
+            title: "メニューバーを有効にする",
+            description: "アプリケーションのメニューバーを有効にします。Altキーで切り替えれます。",
             defaultValue: false,
             disabled: () => Settings.store.customTitleBar ?? isWindows
         },
         {
             key: "splashTheming",
-            title: "Splash theming",
-            description: "Adapt the splash window colors to your custom theme",
+            title: "スプラッシュ画面のテーマ",
+            description: "スプラッシュ画面の色をカスタムテーマに合わせます。",
             defaultValue: false
         },
         WindowsTransparencyControls
@@ -70,63 +70,63 @@ const SettingsOptions: Record<string, Array<BooleanSetting | SettingsComponent>>
     Behaviour: [
         {
             key: "tray",
-            title: "Tray Icon",
-            description: "Add a tray icon for Vesktop",
+            title: "トレイアイコン",
+            description: "Vesktopのトレイアイコンを追加します。",
             defaultValue: true,
             invisible: () => isMac
         },
         {
             key: "minimizeToTray",
-            title: "Minimize to tray",
-            description: "Hitting X will make Vesktop minimize to the tray instead of closing",
+            title: "トレイに最小化",
+            description: "Vesktopのウインドウを閉じるボタンを押した時に、トレイに移動します。",
             defaultValue: true,
             invisible: () => isMac,
             disabled: () => Settings.store.tray === false
         },
         {
             key: "clickTrayToShowHide",
-            title: "Hide/Show on tray click",
-            description: "Left clicking tray icon will toggle the vesktop window visibility.",
+            title: "非表示/表示をトレイで切り替える",
+            description: "トレイアイコンをクリックすると、非表示/表示をトレイで切り替えれます。",
             defaultValue: false
         },
         {
             key: "disableMinSize",
-            title: "Disable minimum window size",
-            description: "Allows you to make the window as small as your heart desires",
+            title: "ウインドウの最小サイズを無効にする",
+            description: "Discordのウインドウ最小サイズを無効にします。",
             defaultValue: false
         },
         {
             key: "disableSmoothScroll",
-            title: "Disable smooth scrolling",
-            description: "Disables smooth scrolling",
+            title: "なめらかなスクロールを無効にする",
+            description: "なめらかなスクロールを無効にします。",
             defaultValue: false
         }
     ],
-    "Notifications & Updates": [
+    通知とアップデート: [
         NotificationBadgeToggle,
         {
             key: "checkUpdates",
-            title: "Check for updates",
-            description: "Automatically check for Vesktop updates",
+            title: "アップデートを確認する",
+            description: "自動的にVesktopのアップデートを確認します。",
             defaultValue: true
         }
     ],
     Miscelleanous: [
         {
             key: "arRPC",
-            title: "Rich Presence",
-            description: "Enables Rich Presence via arRPC",
+            title: "アクティビティ",
+            description: "arRPCを使用したアクティビティを有効にします。",
             defaultValue: false
         },
 
         {
             key: "openLinksWithElectron",
-            title: "Open Links in app (experimental)",
-            description: "Opens links in a new Vesktop window instead of your web browser",
+            title: "アプリでリンクを開く (実験中)",
+            description: "あなたのウェブブラウザの代わりにVesktopでリンクを開きます。",
             defaultValue: false
         }
     ],
-    "Vencord Location": [VencordLocationPicker]
+    VencordJPの場所: [VencordLocationPicker]
 };
 
 function SettingsSections() {
@@ -167,7 +167,7 @@ export default function SettingsUi() {
     return (
         <Forms.FormSection>
             <Text variant="heading-lg/semibold" style={{ color: "var(--header-primary)" }} tag="h2">
-                Vesktop Settings
+                VesktopJPの設定
             </Text>
 
             <SettingsSections />

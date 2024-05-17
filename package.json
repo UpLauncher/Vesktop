@@ -61,8 +61,8 @@
         "pnpm": ">=8"
     },
     "build": {
-        "appId": "dev.vencord.vesktop",
-        "productName": "Vesktop",
+        "appId": "dev.vencordjp.vesktop",
+        "productName": "VesktopJP",
         "files": [
             "!*",
             "dist/js",
@@ -136,20 +136,21 @@
             "icon": "build/icon.icns",
             "iconSize": 105,
             "window": {
-              "width": 512,
-              "height": 340
+                "width": 512,
+                "height": 340
             },
-      
-            "contents": [{
-                "x": 140,
-                "y": 160
-            },
-            {
-                "x": 372,
-                "y": 160,
-                "type": "link",
-                "path": "/Applications"
-            }]
+            "contents": [
+                {
+                    "x": 140,
+                    "y": 160
+                },
+                {
+                    "x": 372,
+                    "y": 160,
+                    "type": "link",
+                    "path": "/Applications"
+                }
+            ]
         },
         "nsis": {
             "include": "build/installer.nsh",

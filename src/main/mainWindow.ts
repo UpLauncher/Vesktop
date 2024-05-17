@@ -80,17 +80,17 @@ function initTray(win: BrowserWindow) {
     };
     const trayMenu = Menu.buildFromTemplate([
         {
-            label: "Open",
+            label: "開く",
             click() {
                 win.show();
             }
         },
         {
-            label: "About",
+            label: "情報",
             click: createAboutWindow
         },
         {
-            label: "Update Vencord",
+            label: "Vencordをアップデート",
             async click() {
                 await downloadVencordFiles();
                 app.relaunch();
@@ -98,7 +98,7 @@ function initTray(win: BrowserWindow) {
             }
         },
         {
-            label: "Reset Vesktop",
+            label: "Vesktopをリセット",
             async click() {
                 await clearData(win);
             }
@@ -107,14 +107,14 @@ function initTray(win: BrowserWindow) {
             type: "separator"
         },
         {
-            label: "Relaunch",
+            label: "再読み込み",
             click() {
                 app.relaunch();
                 app.quit();
             }
         },
         {
-            label: "Quit Vesktop",
+            label: "Vesktopを閉じる",
             click() {
                 isQuitting = true;
                 app.quit();
@@ -123,15 +123,15 @@ function initTray(win: BrowserWindow) {
     ]);
 
     tray = new Tray(ICON_PATH);
-    tray.setToolTip("Vesktop");
+    tray.setToolTip("VesktopJP");
     tray.setContextMenu(trayMenu);
     tray.on("click", onTrayClick);
 }
 
 async function clearData(win: BrowserWindow) {
     const { response } = await dialog.showMessageBox(win, {
-        message: "Are you sure you want to reset Vesktop?",
-        detail: "This will log you out, clear caches and reset all your settings!\n\nVesktop will automatically restart after this operation.",
+        message: "本当にVesktopJPをリセットしますか？",
+        detail: "これを実行すると、キャッシュとすべての設定をリセットします\n\nVesktopJPはこのアクションの後、自動的に再起動します。",
         buttons: ["Yes", "No"],
         cancelId: MessageBoxChoice.Cancel,
         defaultId: MessageBoxChoice.Default,
@@ -160,27 +160,27 @@ function initMenuBar(win: BrowserWindow) {
 
     const subMenu = [
         {
-            label: "About Vesktop",
+            label: "Vesktopについて",
             click: createAboutWindow
         },
         {
-            label: "Force Update Vencord",
+            label: "Vencordを強制的に更新",
             async click() {
                 await downloadVencordFiles();
                 app.relaunch();
                 app.quit();
             },
-            toolTip: "Vesktop will automatically restart after this operation"
+            toolTip: "Vesktopはこのアクションの後、自動的に再起動します。"
         },
         {
             label: "Reset Vesktop",
             async click() {
                 await clearData(win);
             },
-            toolTip: "Vesktop will automatically restart after this operation"
+            toolTip: "Vesktopはこのアクションの後、自動的に再起動します。"
         },
         {
-            label: "Relaunch",
+            label: "再読み込み",
             accelerator: "CmdOrCtrl+Shift+R",
             click() {
                 app.relaunch();
@@ -194,7 +194,7 @@ function initMenuBar(win: BrowserWindow) {
                       type: "separator"
                   },
                   {
-                      label: "Settings",
+                      label: "設定",
                       accelerator: "CmdOrCtrl+,",
                       async click() {
                           mainWin.webContents.executeJavaScript(
@@ -219,7 +219,7 @@ function initMenuBar(win: BrowserWindow) {
                   }
               ] satisfies MenuItemList)),
         {
-            label: "Quit",
+            label: "閉じる",
             accelerator: wantCtrlQ ? "CmdOrCtrl+Q" : void 0,
             visible: !isWindows,
             role: "quit",
@@ -228,7 +228,7 @@ function initMenuBar(win: BrowserWindow) {
             }
         },
         isWindows && {
-            label: "Quit",
+            label: "閉じる",
             accelerator: "Alt+F4",
             role: "quit",
             click() {
@@ -237,7 +237,7 @@ function initMenuBar(win: BrowserWindow) {
         },
         // See https://github.com/electron/electron/issues/14742 and https://github.com/electron/electron/issues/5256
         {
-            label: "Zoom in (hidden, hack for Qwertz and others)",
+            label: "ズームイン (非表示, Qwertzと他の人用のハック)",
             accelerator: "CmdOrCtrl+=",
             role: "zoomIn",
             visible: false
@@ -246,7 +246,7 @@ function initMenuBar(win: BrowserWindow) {
 
     const menu = Menu.buildFromTemplate([
         {
-            label: "Vesktop",
+            label: "VesktopJP",
             role: "appMenu",
             submenu: subMenu.filter(isTruthy)
         },
