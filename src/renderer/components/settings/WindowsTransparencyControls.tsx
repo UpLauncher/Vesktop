@@ -22,7 +22,7 @@ export const WindowsTransparencyControls: SettingsComponent = ({ settings }) => 
             </Forms.FormText>
 
             <Select
-                placeholder="None"
+                placeholder="なし"
                 options={[
                     {
                         label: "なし",

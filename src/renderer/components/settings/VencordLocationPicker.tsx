@@ -48,7 +48,7 @@ export const VencordLocationPicker: SettingsComponent = ({ settings }) => {
                         settings.vencordDir = choice;
                     }}
                 >
-                    Change
+                    変更
                 </Button>
                 <Button
                     size={Button.Sizes.SMALL}

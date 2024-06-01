@@ -67,7 +67,7 @@ const SettingsOptions: Record<string, Array<BooleanSetting | SettingsComponent>>
         },
         WindowsTransparencyControls
     ],
-    Behaviour: [
+    見た目: [
         {
             key: "tray",
             title: "トレイアイコン",
@@ -111,7 +111,7 @@ const SettingsOptions: Record<string, Array<BooleanSetting | SettingsComponent>>
             defaultValue: true
         }
     ],
-    Miscelleanous: [
+    その他: [
         {
             key: "arRPC",
             title: "アクティビティ",
