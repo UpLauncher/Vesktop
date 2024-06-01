@@ -5,11 +5,22 @@
  */
 
 import { app } from "electron";
-import { existsSync, readdirSync, renameSync, rmdirSync } from "fs";
-import { join } from "path";
+import { existsSync, mkdirSync, readdirSync, renameSync, rmdirSync } from "fs";
+import { dirname, join } from "path";
+
+const vesktopDir = dirname(process.execPath);
+
+export const PORTABLE =
+    process.platform === "win32" &&
+    !process.execPath.toLowerCase().endsWith("electron.exe") &&
+    !existsSync(join(vesktopDir, "Uninstall VesktopJP.exe"));
 
 const LEGACY_DATA_DIR = join(app.getPath("appData"), "VencordDesktop", "VencordDesktop");
-export const DATA_DIR = process.env.VENCORD_USER_DATA_DIR || join(app.getPath("userData"));
+export const DATA_DIR =
+    process.env.VENCORD_USER_DATA_DIR || (PORTABLE ? join(vesktopDir, "Data") : join(app.getPath("userData")));
+
+mkdirSync(DATA_DIR, { recursive: true });
+
 // TODO: remove eventually
 if (existsSync(LEGACY_DATA_DIR)) {
     try {
@@ -38,7 +49,7 @@ export const VENCORD_THEMES_DIR = join(DATA_DIR, "themes");
 export const VENCORD_FILES_DIR =
     (require("./settings") as typeof import("./settings")).Settings.store.vencordDir || join(DATA_DIR, "vencordDist");
 
-export const USER_AGENT = `Vesktop/${app.getVersion()} (https://github.com/Vencord/Vesktop)`;
+export const USER_AGENT = `VesktopJP/${app.getVersion()} (https://github.com/VencordJP/Vesktop)`;
 
 // dimensions shamelessly stolen from Discord Desktop :3
 export const MIN_WIDTH = 940;

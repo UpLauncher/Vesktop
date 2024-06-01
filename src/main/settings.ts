@@ -34,14 +34,9 @@ function loadSettings<T extends object = any>(file: string, name: string) {
     return store;
 }
 
-export const Settings = loadSettings<TSettings>(SETTINGS_FILE, "VesktopJP settings");
-if (Object.hasOwn(Settings.plain, "discordWindowsTitleBar")) {
-    Settings.plain.customTitleBar = Settings.plain.discordWindowsTitleBar;
-    delete Settings.plain.discordWindowsTitleBar;
-    Settings.markAsChanged();
-}
+export const Settings = loadSettings<TSettings>(SETTINGS_FILE, "VesktopJPの設定");
 
-export const VencordSettings = loadSettings<any>(VENCORD_SETTINGS_FILE, "Vencord settings");
+export const VencordSettings = loadSettings<any>(VENCORD_SETTINGS_FILE, "Vencordの設定");
 
 if (Object.hasOwn(Settings.plain, "firstLaunch") && !existsSync(STATE_FILE)) {
     console.warn("legacy state in settings.json detected. migrating to state.json");

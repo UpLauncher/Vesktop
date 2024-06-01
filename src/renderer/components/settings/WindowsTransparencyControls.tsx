@@ -25,7 +25,7 @@ export const WindowsTransparencyControls: SettingsComponent = ({ settings }) => 
                 placeholder="None"
                 options={[
                     {
-                        label: "None",
+                        label: "なし",
                         value: "none",
                         default: true
                     },

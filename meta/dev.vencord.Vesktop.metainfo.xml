@@ -1,17 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <component type="desktop-application">
-  <!--Created with jdAppStreamEdit 7.1-->
-  <id>dev.vencord.Vesktop</id>
-  <name>Vesktop</name>
-  <summary>Snappier Discord app with Vencord</summary>
+  <!--Created
+  with jdAppStreamEdit 7.1-->
+  <id>tech.raic.vesktopjp</id>
+  <name>VesktopJP</name>
+  <summary>VencordJPをバンドルしたVesktop</summary>
   <developer_name>Vencord Contributors</developer_name>
-  <launchable type="desktop-id">dev.vencord.Vesktop.desktop</launchable>
+  <launchable type="desktop-id">tech.raic.vesktopjp.desktop</launchable>
   <metadata_license>CC0-1.0</metadata_license>
   <project_license>GPL-3.0</project_license>
-  <project_group>Vencord</project_group>
+  <project_group>VencordJP</project_group>
   <description>
-    <p>Vesktop is a cross platform desktop app aiming to give you a snappier Discord experience with Vencord pre-installed.</p>
-    <p>Vesktop comes bundled with Venmic, a purpose-built library to provide functioning audio screenshare.</p>
+    <p>Vesktop is a cross platform desktop app aiming to give you a snappier Discord experience with
+      Vencord pre-installed.</p>
+    <p>Vesktop comes bundled with Venmic, a purpose-built library to provide functioning audio
+      screenshare.</p>
   </description>
   <screenshots>
     <screenshot type="default">
@@ -28,6 +31,16 @@
     </screenshot>
   </screenshots>
   <releases>
+    <release version="1.5.2-jp" date="2024-06-01" type="stable">
+      <url>https://github.com/VencordJP/Vesktop/releases/tag/v1.5.2</url>
+      <description>
+        <p>変更点</p>
+        <ul>
+          <li>ほとんどを日本語化</li>
+          <li>Vencord/Vesktop(オリジナルのVesktop)を更新</li>
+        </ul>
+      </description>
+    </release>
     <release version="1.5.2" date="2024-05-01" type="stable">
       <url>https://github.com/Vencord/Vesktop/releases/tag/v1.5.2</url>
       <description>
@@ -65,7 +78,8 @@
       <description>
         <p>What's Changed</p>
         <ul>
-          <li>fully renamed to Vesktop. You will likely have to login to Discord again. You might have to re-create your vesktop shortcut</li>
+          <li>fully renamed to Vesktop. You will likely have to login to Discord again. You might
+            have to re-create your vesktop shortcut</li>
           <li>added option to disable smooth scrolling by @ZirixCZ</li>
           <li>added setting to disable hardware acceleration by @zt64</li>
           <li>fixed adding connections</li>
